@@ -7,6 +7,11 @@
 //[3, 4, 1] -> 8
 function addNumbers(array) {
   //your code here!
+  function sum (a, b) {
+    return a + b;
+  }
+
+  return array.reduce(sum)
 };
 
 //Write a function that tells you whether an array contains a given
@@ -16,13 +21,40 @@ function addNumbers(array) {
 
 function hasItem(array, match) {
   //your code here
+  var matchIt = function (a) {
+    if (a === match) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  return array.filter(matchIt);
+
+  // var gotItem = array.filter(function(a){
+  //   if (a === match) {
+  //     return gotItem
+  //   } else {
+  //     return 'nope'
+  //   }
+  // })
 };
 
 //Write a function that tells you the highest value in a given array
 //eg [2, 5, 9] -> 9
 // [6, 4, 6] -> 6
+
 function highestNumber(array) {
   //your code here
+  var compare = function (a, b) {
+    return a - b;
+  }
+
+  return array.sort(compare).pop(); // .pop will alter the array by removing the highest num.
+  /* the long way
+  return array.sort(function(a, b) {
+    return a - b;
+  }).pop(); */
 };
 
 //Write a function that adds an s to the end of each string in an array
@@ -31,6 +63,11 @@ function highestNumber(array) {
 //eg: ['snakes', 'baby'] -> ['snakess', 'babys']
 function pluralize(array) {
   //your code here
+  var plurs = function (a) {
+    return a + 's'
+  }
+
+  return array.map(plurs);
 };
 
 exports.addNumbers = addNumbers;

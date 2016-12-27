@@ -15,6 +15,10 @@
 
 function Sloth(name, favoriteTree) {
   //your code here!
+  this.name = name
+  this.favoriteTree = favoriteTree
+  this.feedings = []
+  this.totalFed = 0
 };
 
 //Our sloth needs a function to feed it. We want to track the size of the feedings throughout the week so we're going to keep them in an array. We'll simulate the amount fed with a random number from 0-5. Write a function 'feed' that adds a feeding to the feedings array.
@@ -36,6 +40,8 @@ violet.feed() -> {
 
 Sloth.prototype.feed = function() {
   //your code here!
+
+  return this.feedings.push(Math.floor(Math.random() * (5 - 0 + 1)) + 0);
 };
 
 //It also needs a function to calculate how much it's been fed. Write a function 'calculateTotalFed'that adds up all of the numbers in the feedings array and sets the result to the property 'totalFed'.
@@ -49,6 +55,17 @@ Sloth.prototype.feed = function() {
 
 Sloth.prototype.calculateTotalFed = function() {
   //your code here!
+
+  function addNumbers(array) {
+    //your code here!
+    function sum (a, b) {
+      return a + b;
+    }
+
+    return array.reduce(sum)
+  };
+
+  this.totalFed = addNumbers(this.feedings);
 };
 
 //Now write a constructor for the ranch. It needs a property 'grove' which is an array where we keep all of our sloth instances.
@@ -59,6 +76,7 @@ grove: []
 
 function SlothRanch() {
   //your code here!
+  grove: []
 }
 
 //Our ranch needs a function that creates a new sloth and adds it to the grove. You'll need to use your sloth constructor!
@@ -71,6 +89,7 @@ function SlothRanch() {
 
 SlothRanch.prototype.makeBabySloth = function(name, favoriteTree) {
   //your code here!
+  
 };
 
 //We also need to be able to feed them. Add a function to the prototype that feeds all the sloths in the grove
