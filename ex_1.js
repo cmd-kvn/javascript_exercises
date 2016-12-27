@@ -39,7 +39,15 @@ function reverseString(string) {
 
   return reverseStr;
   //reverseString('hello') returns undefinedolleh
-}*/
+}
+*/
+/*
+  var reversed = '';
+  for (var i = string.length - 1; i >= 0; i--) {
+    reversed += string[i];
+  }
+  return reversed;
+*/
 }
 
 //Write a function that capitalizes the first letter of every word
@@ -70,7 +78,19 @@ function capitalizeEach(string) {
   return end;
 }
 */
-
+/*
+  var allWords = string.split(' ');
+  var newSentence = [];
+  allWords.forEach(function(word){
+  word = word.replace(word[0], word[0].toUpperCase());
+  newSentence.push();
+});
+return newSentence.join(' ');
+*/
+/*
+  //same as ^^above
+  return string.split(' ').map(word => word.replace(word[0], word[0].toUpperCase())).join(' ');
+*/
 
 exports.capHalf = capHalf;
 exports.mainInitial = mainInitial;

@@ -28,16 +28,31 @@ function hasItem(array, match) {
       return false;
     }
   }
+  // .length === 0 (empty array), false boolean
+  // .length === <0 (array with anything), true boolean
+  // force type coersion into a boolean
+  return !!(array.filter(matchIt).length);
 
-  return array.filter(matchIt);
+  /*
+    return array.includes(match)
+  // OR
+    return array.indexOf(match) !== -1
+  */
+  /*
+  for (var i = 0; i < array.length; i++) {
+    if (match !== array[i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  */
+  /*
 
-  // var gotItem = array.filter(function(a){
-  //   if (a === match) {
-  //     return gotItem
-  //   } else {
-  //     return 'nope'
-  //   }
-  // })
+  if (match === array[i]) {
+    return true;
+  }
+  */
 };
 
 //Write a function that tells you the highest value in a given array
