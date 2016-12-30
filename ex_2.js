@@ -65,11 +65,32 @@ function highestNumber(array) {
     return a - b;
   }
 
-  return array.sort(compare).pop(); // .pop will alter the array by removing the highest num.
+  return array.map(function(i) {return i}.sort(compare).pop(); // .pop will alter the array by removing the highest num.
   /* the long way
   return array.sort(function(a, b) {
     return a - b;
   }).pop(); */
+  /*
+  var highest = array[0];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > highest) highest = array [i];
+  }
+    return highest
+  };
+  */
+  /*
+  var new Array = array.map(function(i) {return i}.sort(function(a, b){
+    return b - a; //descending order
+  });
+  return newArray[0];
+  };
+  */
+  /*
+  return Math.max.apply(null, array);
+  */
+  /*
+  return Math.max(...array);
+  */
 };
 
 //Write a function that adds an s to the end of each string in an array
